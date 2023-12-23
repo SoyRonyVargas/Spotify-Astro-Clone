@@ -9,20 +9,40 @@ const CardButtonPlay = ({ id }) => {
     currentMusic,
     setCurrentMusic
   } = usePlayerStore( state => state )
+  
+  const isPlayingPlaylist = isPlaying && currentMusic?.playlist?.id === id
 
-  const handlePlay = () => {
+  const handlePlay = async () => {
+
+    if( isPlayingPlaylist )
+    {
+
+      setIsPlaying(false)
+
+      return
+
+    }
+
+    const data = await (await (fetch(`/api/playlist?id=${id}`))).json()
+
+    const {
+      songs,
+      playlist
+    } = data
+    
+    setIsPlaying(true)
 
     setCurrentMusic({
-      playlist: {
-        id
-      }
+      songs,
+      playlist,
+      song: songs[0]
     })
 
-    setIsPlaying(!isPlaying)
+    // setIsPlaying(!isPlaying)
 
   }
 
-  const isPlayingPlaylist = isPlaying && currentMusic?.playlist?.id === id
+ 
 
   return (
     <div onClick={handlePlay} className='rounded-full p-4 bg-green-500'>
