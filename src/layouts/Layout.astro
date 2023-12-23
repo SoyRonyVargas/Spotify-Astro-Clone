@@ -32,7 +32,7 @@ const { title } = Astro.props;
 			<footer class="[grid-area:player] min-h-[100px]">
 				<!-- solo carga el componente en el cliente -->
 				<!-- <Player client:only="react" /> -->
-				<!-- transition:persist va a persistir el componente -->
+				<!-- transition:persist va a persistir el componente y no va a renderizar de nuevo el componente -->
 				<Player 
 					client:load 
 					transition:name="media-player"

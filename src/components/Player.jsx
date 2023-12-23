@@ -1,3 +1,4 @@
+import { usePlayerStore } from "@/store/playerStore"
 import { useEffect, useRef, useState } from "react"
 
 export const Pause = ({ className }) => (
@@ -17,8 +18,10 @@ export const Volume = () => (
 )
 
 export const Player = () => {
+    
+    const { isPlaying , setIsPlaying } = usePlayerStore(state => state)
 
-    const [ isPlaying , setPlay ] = useState(false)
+    // const [ isPlaying , setPlay ] = useState(false)
     const audioRef = useRef()
 
     useEffect( () => {
@@ -26,9 +29,24 @@ export const Player = () => {
         audioRef.current.src = "/music/1/01.mp3"
 
     }, [])
+
+    useEffect( () => {
+        
+        debugger 
+
+        if( !isPlaying )
+        {
+            audioRef.current.pause()
+        }
+        else
+        {
+            audioRef.current.play()
+        }
+
+    }, [isPlaying])
     
     const handlePlay = () => {
-
+        
         if( isPlaying )
         {
             audioRef.current.pause()
@@ -38,7 +56,7 @@ export const Player = () => {
             audioRef.current.play()
         }
         
-        setPlay(!isPlaying)
+        setIsPlaying(!isPlaying)
 
     }
 
