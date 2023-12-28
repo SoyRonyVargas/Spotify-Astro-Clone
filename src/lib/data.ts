@@ -13,11 +13,11 @@ export const datos: Playlist[] = [
   {
     id: '1',
     albumId: 1,
-    title: "Chill Lo-Fi Music",
+    title: "Martillazo Playlist",
     color: colors.yellow,
     cover:
-      "https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353",
-    artists: ["NoSpirit", "Casiio"],
+      "https://i.ytimg.com/vi/q2CiqB6neLs/maxresdefault.jpg",
+    artists: ["Dani Flow", "Casiio"],
   },
   {
     id: '2',
@@ -96,8 +96,8 @@ export const songs: Song[] = [
   {
     "id": 1,
     "albumId": 1,
-    "title": "Moonlit Walk",
-    "image": `https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353`,
+    "title": "Martillazo Cancion",
+    "image": `https://t2.genius.com/unsafe/340x340/https%3A%2F%2Fimages.genius.com%2F8911611ffdaba772e7a74109873e46ea.1000x1000x1.png`,
     "artists": ["LoFi Dreamer"],
     "album": "Chill Lo-Fi Music",
     "duration": "3:12"

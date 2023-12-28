@@ -25,6 +25,8 @@ const CardButtonPlay = ({ id }) => {
 
     const data = await (await (fetch(`/api/playlist?id=${id}`))).json()
 
+    debugger
+    
     const {
       songs,
       playlist

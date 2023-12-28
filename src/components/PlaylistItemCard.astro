@@ -31,11 +31,11 @@ const artistString = artists.join(", ");
         class="playlist-item flex transition-all duration-300
         overflow-hidden relative p-2 gap-2 pb-4 w-44 flex-col"
     >
-        <picture class="aspect-square w-full h-auto flex-none">
+        <picture class="aspect-square w-full h-auto flex-none focus:outline-none">
             <img
                 src={cover}
                 alt={`Cover of ${title} by ${artistString}`}
-                class="object-cover w-full h-full rounded-md"
+                class="object-cover w-full h-full rounded-md focus:outline-none"
                 transition:name=`playlist ${id} image`
             />
         </picture>

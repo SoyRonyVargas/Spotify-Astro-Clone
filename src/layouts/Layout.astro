@@ -45,6 +45,16 @@ const { title } = Astro.props;
 
 <style is:global>
 	
+	*:focus,
+	img:focus
+	{
+		outline: 0 !important;
+	}
+
+	button:focus + img {
+		outline: 0;
+	}
+
 	@font-face {
         font-family: "CircularStd";
         src: url("/fonts/CircularStd-Medium.woff2") format("woff2");
