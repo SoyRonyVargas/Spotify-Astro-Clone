@@ -84,7 +84,7 @@ const SongControl = ({ audioRef }) => {
             </span>
             <Slider
                 defaultValue={[0]}
-                className="w-[500px]"
+                className="w-[400px]"
                 max={audioRef?.current?.duration ?? 0}
                 min={0}
                 value={[currentTime]}
@@ -211,14 +211,14 @@ export const Player = () => {
     }
 
     return (
-        <div className="flex flex-row justify-between w-full px-4 z-50">
-            <div>
+        <div className="flex flex-row justify-between w-full px-1 z-50">
+            <div className="w-[30%]">
                 <CurrentSong
                     {...currentMusic.song}
                 />
             </div>
 
-            <div className="grid place-content-center gap-4 flex-1">
+            <div className="grid place-content-center gap-4 flex-1 w-[40%]">
                 <div className="flex justify-center flex-col items-center">
                     
                     <button onClick={handlePlay} className="bg-white rounded-full p-2">
@@ -238,7 +238,7 @@ export const Player = () => {
                 </div>
             </div>
 
-            <div className="grid place-content-center">
+            <div className="grid place-content-center w-[30%] justify-end">
                 <VolumeControl />
             </div>
         </div>

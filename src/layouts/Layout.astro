@@ -29,7 +29,7 @@ const { title } = Astro.props;
 			<main class="[grid-area:main] rounded-lg bg-zinc-900 overflow-y-auto">
 				<slot />
 			</main>
-			<footer class="[grid-area:player] min-h-[100px]">
+			<footer class="[grid-area:player] flex items-center h-[80px]">
 				<!-- solo carga el componente en el cliente -->
 				<!-- <Player client:only="react" /> -->
 				<!-- transition:persist va a persistir el componente y no va a renderizar de nuevo el componente -->
@@ -53,6 +53,7 @@ const { title } = Astro.props;
 
 	button:focus + img {
 		outline: 0;
+		
 	}
 
 	@font-face {
