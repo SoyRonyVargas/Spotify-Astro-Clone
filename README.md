@@ -21,10 +21,10 @@ Este repositorio contiene un clon del popular servicio de música Spotify constr
 ## Instalación
 
 1. Clona este repositorio:
-   `git clone https://github.com/midudev/spotify-astro-clone.git`
+   `git clone https://github.com/SoyRonyVargas/Spotify-Astro-Clone.git`
 
 2. Navega a la carpeta del proyecto:
-   `cd spotify-astro-clone`
+   `cd spotify-clone-astro`
 
 3. Instala las dependencias:
    `npm install`
