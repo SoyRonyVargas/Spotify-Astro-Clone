@@ -4,6 +4,21 @@ import { allPlaylists , songs } from "@/lib/data";
 import Layout from "@/layouts/Layout.astro";
 import CardButtonPlay from "@/components/CardButtonPlay";
 
+// export async function getStaticPaths() {
+//   return allPlaylists.map( p => {
+
+//     return {
+//       params: { id: p.id }
+//     }
+//   })
+//   //  [
+//   //   { params: { id: '1' } },
+//   //   { params: { id: '2' } },
+//   //   { params: { id: '3' } }
+//   // ];
+// }
+
+
 const { id } = Astro.params
 
 const playlistSelected = allPlaylists.find( p => p.id === id )
@@ -11,6 +26,7 @@ const playlistSelected = allPlaylists.find( p => p.id === id )
 if( !playlistSelected ) return Astro.redirect("/")
 
 const playlistSongs = songs.filter( song => song.albumId === playlistSelected?.albumId )
+
 
 ---
 
