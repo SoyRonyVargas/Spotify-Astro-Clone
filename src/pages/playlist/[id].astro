@@ -2,6 +2,7 @@
 import MusicsTable from "@/components/MusicsTable.astro";
 import { allPlaylists , songs } from "@/lib/data";
 import Layout from "@/layouts/Layout.astro";
+import CardButtonPlay from "@/components/CardButtonPlay";
 
 const { id } = Astro.params
 
@@ -53,21 +54,18 @@ const playlistSongs = songs.filter( song => song.albumId === playlistSelected?.a
           </div>
     </header>
 
-    <div class="relative z-10 px-6 pt-10">
-
-            <!-- <h1 class="text-4xl font-bold">Buenos días</h1>
-
-           <ul class="flex flex-wrap mt-6 gap-4">
-                {
-                    datos.map( playlist => (
-                        <PlaylistItemCard
-                            playlist={playlist}
-                        />
-                    ))
-                }
-            </ul> --> 
-            
+    <div class="px-6 mt-6 mb-2 relative">
+      <CardButtonPlay 
+        id={playlistSelected?.id} 
+        client:visible
+        size="large"
+      />
     </div>
+
+    <!-- <div class="relative z-10 px-6 pt-10">
+
+         
+    </div> -->
 
     <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/80 -z-[1]"></div>
     
